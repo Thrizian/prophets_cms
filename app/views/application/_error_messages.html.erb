@@ -1,0 +1,11 @@
+<% if object && object.errors.size > 0 %>
+    <div id="error-explanation" >
+      <b><%= pluralize(object.errors.size, 'error') %> prevented this entry from being saved.</b>
+      <p>There were problems with the following fields:</p>
+      <ul>
+        <% object.errors.full_messages.each do |m| %>
+          <li><%= m %></li>
+        <% end %>
+      </ul>
+    </div>
+<% end %>

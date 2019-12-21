@@ -1,0 +1,16 @@
+<% @page_title = "Delete #{@admin_user.full_name}" %>
+
+<div class="admin_users delete">
+  <h2>Delete admin <%= @admin_user.full_name %></h2>
+  <%= link_to('<< Back to index', admin_users_path, class: 'back-link') %>
+
+  <%= form_for(@admin_user, method: 'delete') do |f| %>
+    <p>Are you sure you want to permanently delete this admin?</p>
+
+    <p class="reference-name"><%= f.object.full_name %></p>
+
+    <div class="form-buttons">
+      <%= f.submit('Delete Admin') %>
+    </div>
+  <% end %>
+</div>

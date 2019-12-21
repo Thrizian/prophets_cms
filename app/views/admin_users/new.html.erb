@@ -1,0 +1,15 @@
+<% @page_title = 'New Admin' %>
+
+<div class="admin_users new">
+  <h2>Create new Admin</h2>
+
+  <%= link_to('<< Back to index', admin_users_path, class: 'back-link') %>
+
+  <%= form_for(@admin_user) do |f| %>
+    <%= render(partial: 'form', locals: {f: f}) %>
+
+    <div class="form-buttons">
+      <%= f.submit('Create Admin') %>
+    </div>
+  <% end %>
+</div>

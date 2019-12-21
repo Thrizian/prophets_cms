@@ -1,0 +1,14 @@
+<%= render 'shared/title' %>
+
+<div class="sections new">
+  <h2>Create new Section</h2>
+  <%= link_to('<< Back to index', sections_path, class: 'back-link') %>
+
+  <%= form_for(@section) do |f| %>
+    <%= render(partial: 'form', locals: {f: f}) %>
+
+    <div class="form-buttons">
+      <%= f.submit('Create Section') %>
+    </div>
+  <% end %>
+</div>

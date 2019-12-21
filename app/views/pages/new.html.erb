@@ -1,0 +1,14 @@
+<%= render 'shared/title' %>
+
+<div class="pages new">
+  <h2>Create a new Page</h2>
+  <%= link_to('<< Back to index', pages_path(subject_id: @subject.id), class: 'back-link') %>
+
+  <%= form_for(@page, url: pages_path(subject_id: @subject.id)) do |f| %>
+    <%= render(partial: 'form', locals: { f: f }) %>
+
+    <div class="form-buttons">
+      <%= f.submit('Create Page') %>
+    </div>
+  <% end %>
+</div>

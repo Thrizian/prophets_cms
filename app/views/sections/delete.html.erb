@@ -1,0 +1,16 @@
+<%= render 'shared/title' %>
+
+<div class="sections delete">
+  <h2>Delete Section <%= @section.name %></h2>
+  <%= link_to('<< Back to index', sections_path, class: 'back-link') %>
+
+  <%= form_for(@section, method: 'delete') do |f| %>
+    <p>Are you sure you want to permanently delete this section?</p>
+
+    <p class="reference-name"><%= f.object.name %></p>
+
+    <div class="form-buttons">
+      <%= f.submit('Delete Section') %>
+    </div>
+  <% end %>
+</div>

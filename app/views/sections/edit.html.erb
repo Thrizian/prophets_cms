@@ -1,0 +1,14 @@
+<%= render 'shared/title' %>
+
+<div class="sections edit">
+  <h2>Update Section <%= @section.name %></h2>
+  <%= link_to('<< Back to index', sections_path, class: 'back-link') %>
+
+  <%= form_for(@section) do |f| %>
+    <%= render(partial: 'form', locals: {f: f}) %>
+
+    <div class="form-buttons">
+      <%= f.submit('Update Section') %>
+    </div>
+  <% end %>
+</div>

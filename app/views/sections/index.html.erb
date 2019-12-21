@@ -1,0 +1,29 @@
+<%= render 'shared/title' %>
+
+<div class="sections index">
+  <h2>Sections</h2>
+  <%= link_to('<< To Admin Menu', access_menu_path, class: 'admin-menu')%>
+  <table>
+    <tr>
+      <th>#</th>
+      <th>Name</th>
+      <th>Page ID</th>
+      <th>Visible</th>
+      <th>Actions</th>
+    </tr>
+    <% @sections.each do |s| %>
+      <tr>
+        <td><%= s.position %></td>
+        <td><%= s.name%></td>
+        <td class='center'><%= s.page_id %></td>
+        <td class='center'><%= status_tag(s.visible) %></td>
+        <td class='actions'>
+          <%= link_to('Show',   section_path(s),        class: 'action show') %>
+          <%= link_to('Edit',   edit_section_path(s),   class: 'action edit') %>
+          <%= link_to('Delete', delete_section_path(s), class: 'action delete') %>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+  <%= link_to('Add new section', new_section_path, class: 'action new')%>
+</div>

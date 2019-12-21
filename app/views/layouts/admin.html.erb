@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Prophets CMS &spades; <%= @page_title || 'Admin Area' %></title>
+    <%= stylesheet_link_tag('//cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.css', media: 'all') %>
+    <%= stylesheet_link_tag('//fonts.googleapis.com/css?family=Roboto:300,300italic,400,400italic,500,500italic,700,700italic', media: 'all') %>
+    <%= stylesheet_link_tag('https://fonts.googleapis.com/css?family=Vollkorn+SC:400,600,700,900&display=swap', media: 'all') %>
+    <%= stylesheet_link_tag('admin', media: 'all') %>
+    <%= favicon_link_tag('') %>
+    <%= csrf_meta_tags %>
+
+  </head>
+
+  <body>
+    <div id="header">
+      <h1>Prophets CMS Admin</h1>
+    </div>
+
+    <div id="main">
+      <% if flash[:notice].present? %>
+        <div class="notice">
+          <%= flash[:notice] %>
+        </div>
+      <% elsif flash[:error].present? %>
+        <div class="error">
+          <%= flash[:error] %>
+        </div>
+      <% end %>
+      <div id="content">
+        <%= yield %>
+      </div>
+    </div>
+
+    <div id="footer">
+      <p id="copyright">&copy; prophets.nl</p>
+    </div>
+  </body>
+
+</html>

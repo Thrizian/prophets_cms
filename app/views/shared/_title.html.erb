@@ -1,0 +1,30 @@
+<%
+  # This function creates a dynamic page title based on the controller name
+  # It then gets the similarly named instance variable depicting the object
+  # as well as the controller action allowing reuse to dynamically create
+  # page titles
+  plural_name_of_class = self.controller.class.name.gsub('Controller', '')
+  singular_name_of_class = plural_name_of_class.singularize
+  if self.controller.action_name != 'index'
+    object_name_attribute = (
+      instance_variable_get('@' + singular_name_of_class.downcase) ||
+      instance_variable_get('@' + plural_name_of_class.downcase)
+    ).name
+  end
+
+  @page_title =
+      case self.controller.action_name
+      when 'index'
+        "All #{plural_name_of_class}"
+      when 'new'
+        "New #{singular_name_of_class}"
+      when 'edit'
+        "Editing #{singular_name_of_class} #{object_name_attribute}"
+      when 'show'
+        "Showing #{singular_name_of_class} #{object_name_attribute}"
+      when 'delete'
+        "Deleting #{singular_name_of_class} #{object_name_attribute}"
+      else
+        ''
+      end
+%>

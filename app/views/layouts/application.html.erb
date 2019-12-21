@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Prophets</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div id="header">
+      <h1>Prophets</h1>
+    </div>
+    <div id="main">
+
+      <div id="content">
+        <%= yield %>
+      </div>live
+
+    </div>
+
+    <div id="footer">
+      <p id="copyright">&copy;prophets.nl</p>
+    </div>
+
+  </body>
+</html>
