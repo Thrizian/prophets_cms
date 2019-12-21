@@ -2,9 +2,9 @@
 
 <div class="sections new">
   <h2>Create new Section</h2>
-  <%= link_to('<< Back to index', sections_path, class: 'back-link') %>
+  <%= link_to('<< Back to index', sections_path(page_id: @page.id), class: 'back-link') %>
 
-  <%= form_for(@section) do |f| %>
+  <%= form_for(@section, url: sections_path(page_id: @page.id)) do |f| %>
     <%= render(partial: 'form', locals: {f: f}) %>
 
     <div class="form-buttons">
