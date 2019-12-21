@@ -1,5 +1,7 @@
-class AdminUser < ApplicationRecord
+# frozen_string_literal: true
 
+# These objects are the users that have permission to manage the crud
+class AdminUser < ApplicationRecord
   has_secure_password
 
   has_and_belongs_to_many :pages
@@ -7,7 +9,7 @@ class AdminUser < ApplicationRecord
   has_many :section_edits
   has_many :sections, through: :section_edits
 
-  EMAIL_REGEX = /\A[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}\Z/i
+  EMAIL_REGEX = /\A[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}\Z/i.freeze
 
   validates :first_name,  presence: true,
                           length: { maximum: 25 }
@@ -26,7 +28,7 @@ class AdminUser < ApplicationRecord
 
   validates :password,    confirmation: true
 
-  scope :sorted, lambda { order(:last_name, :first_name) }
+  scope :sorted, -> { order(:last_name, :first_name) }
 
   def full_name
     "#{first_name} #{last_name}"

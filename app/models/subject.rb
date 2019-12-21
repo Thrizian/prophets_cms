@@ -1,14 +1,15 @@
-class Subject < ApplicationRecord
+# frozen_string_literal: true
 
+# Subjects are allow for the grouping of pages in the navigation
+class Subject < ApplicationRecord
   has_many :pages
 
-  scope :visible, lambda { where(visible: true) }
-  scope :invisible, lambda { where(visible: false) }
-  scope :sorted, lambda { order('position ASC') }
-  scope :newest_first, lambda { order('created_at DESC')}
-  scope :search, lambda { |query| where(["name LIKE ?", "%#{query}%"]) }
+  scope :visible, -> { where(visible: true) }
+  scope :invisible, -> { where(visible: false) }
+  scope :sorted, -> { order('position ASC') }
+  scope :newest_first, -> { order('created_at DESC') }
+  scope :search, ->(query) { where(['name LIKE ?', "%#{query}%"]) }
 
   validates :name,        presence: true,
                           length: { maximum: 255 }
-
 end

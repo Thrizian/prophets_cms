@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# Sections are small articles on pages that contain content.
 class CreateSections < ActiveRecord::Migration[5.2]
   def change
     create_table :sections do |t|

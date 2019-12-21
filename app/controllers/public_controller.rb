@@ -1,5 +1,9 @@
-class PublicController < ApplicationController
+# frozen_string_literal: true
 
+# The public controller uses the public layout to serve all
+# pages meant for the public as soon as: subjects, pages, sections
+# are checked to be visible.
+class PublicController < ApplicationController
   layout 'public'
 
   before_action :prepare_navigation
@@ -11,12 +15,10 @@ class PublicController < ApplicationController
   def show
     # look up page that matches permalink
     @page = Page.visible.where(permalink: params[:permalink]).first
-    if @page.nil?
-      flash[:notice] = 'Sorry this page does not exist.'
-      redirect_to(root_path)
-    else
+    return unless @page.nil?
 
-    end
+    flash[:notice] = 'Sorry this page does not exist.'
+    redirect_to(root_path)
   end
 
   private

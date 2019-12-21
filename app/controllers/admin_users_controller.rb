@@ -1,8 +1,11 @@
+# frozen_string_literal: true
+
+# Provides the CRUD for AdminUsers
 class AdminUsersController < ApplicationController
   layout 'admin'
 
   before_action :confirm_logged_in
-  before_action :find_admin_user, only: [:edit, :update, :delete, :destroy]
+  before_action :find_admin_user, only: %i[edit update delete destroy]
 
   def index
     @admin_users = AdminUser.sorted

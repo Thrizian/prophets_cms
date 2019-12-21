@@ -1,13 +1,16 @@
-class Page < ApplicationRecord
+# frozen_string_literal: true
 
-  belongs_to :subject, { optional: false }
+# Pages are objects that contain sections and belong to subjects
+# They are the core element needed for constructing navigation and URI
+class Page < ApplicationRecord
+  belongs_to :subject, optional: false
   has_many :sections
   has_and_belongs_to_many :admin_users
 
-  scope :visible, lambda { where(visible: true) }
-  scope :invisible, lambda { where(visible: false) }
-  scope :sorted, lambda { order('position ASC') }
-  scope :newest_first, lambda { order('created_at DESC')}
+  scope :visible, -> { where(visible: true) }
+  scope :invisible, -> { where(visible: false) }
+  scope :sorted, -> { order('position ASC') }
+  scope :newest_first, -> { order('created_at DESC') }
 
   validates :name,  presence: true,
                     length: { maximum: 255 }
@@ -15,5 +18,4 @@ class Page < ApplicationRecord
   validates :permalink, presence: true,
                         length: { in: 3..255 },
                         uniqueness: true
-
 end

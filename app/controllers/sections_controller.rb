@@ -1,20 +1,19 @@
-class SectionsController < ApplicationController
+# frozen_string_literal: true
 
+class SectionsController < ApplicationController
   layout 'admin'
 
   before_action :confirm_logged_in
+  before_action :find_page
   # To prevent having to define a section many times throughout this controller
   # use a private method to find the section for us.
-  before_action :find_section, only: [:show, :edit, :update, :delete, :destroy]
-
+  before_action :find_section, only: %i[show edit update delete destroy]
 
   def index
-
     @sections = Section.sorted
   end
 
-  def show
-  end
+  def show; end
 
   def new
     @section_count = Section.count + 1
@@ -33,7 +32,6 @@ class SectionsController < ApplicationController
       @pages = Page.sorted
       render :new
     end
-
   end
 
   def edit
@@ -52,8 +50,7 @@ class SectionsController < ApplicationController
     end
   end
 
-  def delete
-  end
+  def delete; end
 
   def destroy
     @section.destroy
@@ -64,9 +61,11 @@ class SectionsController < ApplicationController
 
   private
 
+  def find_page; end
+
   def section_params
     params.require(:section).permit(
-        :page_id, :name, :content_type, :position, :visible, :content
+      :page_id, :name, :content_type, :position, :visible, :content
     )
   end
 

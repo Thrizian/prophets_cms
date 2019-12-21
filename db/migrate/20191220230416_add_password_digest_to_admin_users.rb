@@ -1,3 +1,7 @@
+# frozen_string_literal: true
+
+# After adding a password to the admin_users password_digest became
+# mandatory
 class AddPasswordDigestToAdminUsers < ActiveRecord::Migration[5.2]
   def up
     remove_column 'admin_users', 'hashed_password'

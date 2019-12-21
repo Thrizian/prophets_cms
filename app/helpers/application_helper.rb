@@ -1,11 +1,12 @@
+# frozen_string_literal: true
+
+# Application wide helpers hide here!
 module ApplicationHelper
-
-
   def error_messages_for(object)
-    render(partial: 'application/error_messages', locals: { object: object})
+    render(partial: 'application/error_messages', locals: { object: object })
   end
 
-  def status_tag(boolean, options={})
+  def status_tag(boolean, options = {})
     options[:true_text]  ||= ''
     options[:false_text] ||= ''
 
@@ -15,5 +16,4 @@ module ApplicationHelper
       content_tag(:span, options[:false_text], class: 'status false')
     end
   end
-
 end

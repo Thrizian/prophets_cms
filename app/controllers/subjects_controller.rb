@@ -1,18 +1,18 @@
-class SubjectsController < ApplicationController
+# frozen_string_literal: true
 
+class SubjectsController < ApplicationController
   layout 'admin'
 
   before_action :confirm_logged_in
   # To prevent having to define a subject many times throughout this controller
   # use a private method to find the subject for us.
-  before_action :find_subject, only: [:show, :edit, :update, :delete, :destroy]
+  before_action :find_subject, only: %i[show edit update delete destroy]
 
   def index
     @subjects = Subject.sorted
   end
 
-  def show
-  end
+  def show; end
 
   def new
     @subject_count = Subject.count + 1
@@ -32,7 +32,6 @@ class SubjectsController < ApplicationController
       @subject_count = Subject.count + 1
       render :new
     end
-
   end
 
   def edit
@@ -52,8 +51,7 @@ class SubjectsController < ApplicationController
     end
   end
 
-  def delete
-  end
+  def delete; end
 
   def destroy
     @subject.destroy
@@ -71,6 +69,4 @@ class SubjectsController < ApplicationController
   def find_subject
     @subject ||= Subject.find(params[:id])
   end
-
-
 end
