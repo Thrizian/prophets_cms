@@ -9,8 +9,7 @@ class SectionsController < ApplicationController
   # use a private method to find the section for us.
   before_action :find_section, only: %i[show edit update delete destroy]
   before_action :find_page
-  before_action :find_pages, only: %i[new create edit update]
-  before_action :set_page_count, only: %i[new create edit update]
+  before_action :set_section_count, only: %i[new create edit update]
 
   def index
     @sections = @page.sections.sorted
@@ -24,6 +23,7 @@ class SectionsController < ApplicationController
 
   def create
     @section = Section.new(section_params)
+    @section.page_id = @page
 
     if @section.save
       flash[:notice] = 'Section saved successfully.'
@@ -62,7 +62,7 @@ class SectionsController < ApplicationController
 
   def section_params
     params.require(:section).permit(
-        :page_id, :name, :content_type, :position, :visible, :content
+        :name, :content_type, :position, :visible, :content
     )
   end
 
@@ -74,7 +74,4 @@ class SectionsController < ApplicationController
     @page = Page.find(params[:page_id])
   end
 
-  def find_pages
-    @pages = @page.sections.sorted
-  end
 end

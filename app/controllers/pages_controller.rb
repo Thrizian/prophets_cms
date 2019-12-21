@@ -9,7 +9,6 @@ class PagesController < ApplicationController
   # use a private method to find the page for us.
   before_action :find_page, only: %i[show edit update delete destroy]
   before_action :find_subject
-  before_action :find_subjects, only: %i[new create edit update]
   before_action :set_page_count, only: %i[new create edit update]
 
   def index
@@ -24,6 +23,7 @@ class PagesController < ApplicationController
 
   def create
     @page = Page.new(page_params)
+    @page.subject_id = @subject
 
     if @page.save
       flash[:notice] = 'Page saved successfully.'
@@ -62,7 +62,7 @@ class PagesController < ApplicationController
 
   def page_params
     params.require(:page).permit(
-      :subject_id, :name, :permalink, :position, :visible
+      :name, :permalink, :position, :visible
     )
   end
 
@@ -72,9 +72,5 @@ class PagesController < ApplicationController
 
   def find_subject
     @subject = Subject.find(params[:subject_id])
-  end
-
-  def find_subjects
-    @subjects = @subject.pages.sorted
   end
 end

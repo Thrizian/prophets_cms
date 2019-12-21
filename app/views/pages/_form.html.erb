@@ -18,7 +18,7 @@
 
   <tr>
     <th><%= f.label(:subject) %></th>
-    <td><%= f.select(:subject_id, @subjects.map {|s| [s.name, s.id]}) %></td>
+    <td><%= f.object.subject.name %></td>
   </tr>
 
   <tr>

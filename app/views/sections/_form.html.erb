@@ -28,7 +28,7 @@
 
   <tr>
     <th><%= f.label(:page) %></th>
-    <td><%= f.select(:page_id, @pages.map{ |p| [p.name, p.id] }) %></td>
+    <td><%= f.object.page.name %></td>
   </tr>
 
   <tr>

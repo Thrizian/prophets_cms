@@ -13,7 +13,7 @@ class AccessController < ApplicationController
 
   def menu
     # display text and links
-    @admin_user = AdminUser.find(session[:user_id])
+    @full_name = session[:full_name]
   end
 
   def login
@@ -24,8 +24,9 @@ class AccessController < ApplicationController
     check_user_authorization
 
     if @authorized_user
-      session[:user_id] = @authorized_user.id
-      flash[:notice]    = 'You are now logged in'
+      session[:user_id]   = @authorized_user.id
+      session[:full_name] = @authorized_user.full_name
+      flash[:notice]      = 'You are now logged in'
       redirect_to admin_path, locals: { admin_user: @authorized_user }
     else
       flash.now[:error] = 'As far as we know you don\'t exist, ' \
@@ -35,8 +36,9 @@ class AccessController < ApplicationController
   end
 
   def logout
-    session[:user_id] = nil
-    flash[:notice]    = 'You have been logged out.'
+    session[:user_id]   = nil
+    session[:full_name] = nil
+    flash[:notice]      = 'You have been logged out.'
     redirect_to access_login_path
   end
 
