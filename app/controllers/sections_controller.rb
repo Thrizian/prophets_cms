@@ -1,24 +1,25 @@
 # frozen_string_literal: true
 
+# CRUD Operations for sections as a nested object to pages
 class SectionsController < ApplicationController
   layout 'admin'
 
   before_action :confirm_logged_in
-  before_action :find_page
   # To prevent having to define a section many times throughout this controller
   # use a private method to find the section for us.
   before_action :find_section, only: %i[show edit update delete destroy]
+  before_action :find_page
+  before_action :find_pages, only: %i[new create edit update]
+  before_action :set_page_count, only: %i[new create edit update]
 
   def index
-    @sections = Section.sorted
+    @sections = @page.sections.sorted
   end
 
   def show; end
 
   def new
-    @section_count = Section.count + 1
-    @pages = Page.sorted
-    @section = Section.new
+    @section = Section.new(page_id: @page.id)
   end
 
   def create
@@ -26,26 +27,19 @@ class SectionsController < ApplicationController
 
     if @section.save
       flash[:notice] = 'Section saved successfully.'
-      redirect_to sections_path
+      redirect_to sections_path(page_id: @page.id)
     else
-      @section_count = Section.count + 1
-      @pages = Page.sorted
       render :new
     end
   end
 
-  def edit
-    @section_count = Section.count
-    @pages = Page.sorted
-  end
+  def edit; end
 
   def update
     if @section.update_attributes(section_params)
       flash[:notice] = 'Section updated successfully.'
-      redirect_to section_path(@section)
+      redirect_to section_path(@section, page_id: @page.id)
     else
-      @section_count = Section.count
-      @pages = Page.sorted
       render :edit
     end
   end
@@ -56,20 +50,31 @@ class SectionsController < ApplicationController
     @section.destroy
 
     flash[:notice] = "Section '#{@section.name}'successfully destroyed."
-    redirect_to sections_path
+    redirect_to sections_path(page_id: @page.id)
   end
 
   private
 
-  def find_page; end
+  def set_section_count
+    @section_count = @page.sections.count
+    @section_count += 1 if params[:action].in? %w[new create]
+  end
 
   def section_params
     params.require(:section).permit(
-      :page_id, :name, :content_type, :position, :visible, :content
+        :page_id, :name, :content_type, :position, :visible, :content
     )
   end
 
   def find_section
     @section ||= Section.find(params[:id])
+  end
+
+  def find_page
+    @page = Page.find(params[:page_id])
+  end
+
+  def find_pages
+    @pages = @page.sections.sorted
   end
 end

@@ -55,10 +55,19 @@ class PagesController < ApplicationController
 
   private
 
+  def set_page_count
+    @page_count = @subject.pages.count
+    @page_count += 1 if params[:action].in? %w[new create]
+  end
+
   def page_params
     params.require(:page).permit(
       :subject_id, :name, :permalink, :position, :visible
     )
+  end
+
+  def find_page
+    @page ||= Page.find(params[:id])
   end
 
   def find_subject
@@ -66,15 +75,6 @@ class PagesController < ApplicationController
   end
 
   def find_subjects
-    @subjects = Subject.sorted
-  end
-
-  def set_page_count
-    @page_count = Page.count
-    @page_count += 1 if params[:action].in? %w[new create]
-  end
-
-  def find_page
-    @page ||= Page.find(params[:id])
+    @subjects = @subject.pages.sorted
   end
 end
