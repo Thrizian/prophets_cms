@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # Subjects are the parents of pages and are the core navigational options
 # of the cms.
 class CreateSubjects < ActiveRecord::Migration[5.2]

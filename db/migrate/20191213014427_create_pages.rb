@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # Pages belong to subjects and are made up out of several sections
 # of content they have a permalink that allows for navigation.
 class CreatePages < ActiveRecord::Migration[5.2]

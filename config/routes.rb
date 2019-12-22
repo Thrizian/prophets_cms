@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 Rails.application.routes.draw do
   root 'public#index'
   get 'show/:permalink', to: 'public#show', as: 'public_show'

@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # This table maintains the many to many relationship between
 # administrators and pages.
 class CreateAdminUsersPages < ActiveRecord::Migration[5.2]

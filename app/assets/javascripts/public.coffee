@@ -1,3 +1,20 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://coffeescript.org/
+$("#animator").mouseover(function(){
+    $('#navigation').css('visibility', 'visible');
+});
+$("#nav-container").mouseout(function(){
+    $('#navigation').css('visibility', 'hidden');
+});
+$("#full-animation").mouseover(function(){
+    $('#navigation').css('visibility', 'visible');
+});
+$( ".menu-link" ).click(function() {
+    $('#waiter').removeClass( "unclicked" ).addClass('clicked');
+$('#content').attr('z-index', '-2');
+$('#navigation').delay( 120 ).css('visibility', 'visible');
+});
+$("#waiter").click(function() {
+  $("#waiter").removeClass( "clicked" ).addClass('unclicked');
+$('#content').attr('z-index', '-2');
+$('#navigation').delay( 120 ).css('visibility', 'visible');
+});
+

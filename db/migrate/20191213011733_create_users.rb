@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # This table creates the users that will be able to manipulate the database
 class CreateUsers < ActiveRecord::Migration[5.2]
   def change
