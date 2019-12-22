@@ -1,17 +1,5 @@
 /* Loads after primary and only for admin */
-$primary-color: #998264;
-$primary-light: #e3dcd4;
-$background-color: #f2f8ff;
-$accent-color: #666a86;
-$secondary-color: #415da3;
-$anchor-gradient: -webkit-linear-gradient(left, $secondary-color 0%, $accent-color 50%);
-$header-gradient: -webkit-linear-gradient(bottom, $secondary-color, $accent-color, $primary-light);
-$error-red: #aa3338;
-$error-red-background: #d8a2a4;
-
-$success-green: #048966;
-$success-green-background: #8decd3;
-$serif: 'Vollkorn SC', serif;
+@import 'mixins/scheme';
 
 span.status {
   display: inherit;

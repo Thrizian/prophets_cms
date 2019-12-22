@@ -24,9 +24,9 @@
         <td class='center'><%= p.sections.size %></td>
         <td class='center'><%= status_tag(p.visible) %></td>
         <td class='actions'>
-          <%= link_to('View Sections', sections_path(page_id: p.id), class: 'action index') %>
-          <%= link_to('Show', page_path(p, subject_id: @subject.id), class: 'action show') %>
-          <%= link_to('Edit', edit_page_path(p, subject_id: @subject.id), class: 'action edit') %>
+          <%= link_to('View Sections', sections_path(page_id: p.id), class: 'action index') %> |
+          <%= link_to('Show', page_path(p, subject_id: @subject.id), class: 'action show') %> |
+          <%= link_to('Edit', edit_page_path(p, subject_id: @subject.id), class: 'action edit') %> |
           <%= link_to('Delete', delete_page_path(p, subject_id: @subject.id), class: 'action delete') %>
         </td>
       </tr>

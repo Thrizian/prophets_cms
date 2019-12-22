@@ -1,11 +1,6 @@
 <% @page_title = 'Admin Menu' %>
 
 <div class="menu">
-  <h2>Administrator Menu</h2>
-  <div class="identity">Logged in as: <%= "#{@full_name}"%></div>
-  <ul>
-    <li><%= link_to('Manage Admins', admin_users_path) %></li>
-    <li><%= link_to('Manage Content', subjects_path) %></li>
-    <li><%= link_to('Logout', access_logout_path) %></li>
-  </ul>
+  <h2>Welcome to the CMS admin area</h2>
+  <div class="identity"><%= "you are logged in as: #{@full_name}"%></div>
 </div>

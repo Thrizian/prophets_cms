@@ -4,22 +4,15 @@
     <title>Prophets CMS &spades; <%= @page_title || 'Admin Area' %></title>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_link_tag('//cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.css', media: 'all') %>
-    <%= stylesheet_link_tag('//fonts.googleapis.com/css?family=Roboto:300,300italic,400,400italic,500,500italic,700,700italic', media: 'all') %>
-    <%= stylesheet_link_tag('https://fonts.googleapis.com/css?family=Vollkorn+SC:400,600,700,900&display=swap', media: 'all') %>
     <%= stylesheet_link_tag('https://fonts.googleapis.com/css?family=Varela+Round&display=swap', media: 'all') %>
     <%= stylesheet_link_tag('application', media: 'all') %>
+    <%= stylesheet_link_tag('admin', media: 'all') %>
     <%= favicon_link_tag('') %>
-
   </head>
 
   <body>
     <div id="header">
-      <div id="navigation" onmouseenter=makeVisible('odd','even'); onmouseleave=makeHidden('odd','even');>
-        <%= render(partial: 'layouts/navigation', locals: {subjects: @subjects} ) %>
-      </div>
-      <div id="animator">
-        <%= render partial: 'layouts/menu_image' %>
-      </div>
+      <%= render partial: 'layouts/headers', locals: {origin: 'admin'} %>
       <div id="introduction">
         <h1 id="name">Prophets CMS</h1>
       </div>
@@ -40,9 +33,7 @@
       </div>
     </div>
 
-    <div id="footer">
-      <p id="copyright">&copy; prophets.nl</p>
-    </div>
+    <%= render partial: 'layouts/footer' %>
   </body>
 
 </html>

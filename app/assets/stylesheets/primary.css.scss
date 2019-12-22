@@ -1,30 +1,5 @@
 /* Loads after primary and only for admin */
-$primary-color: #998264;
-$primary-light: #e3dcd4;
-$background-color: #f2f8ff;
-$accent-color: #666a86;
-$secondary-color: #415da3;
-$secondary-light: #a8b5d5;
-
-$primary-color: #97131F;
-$primary-light: #EF4136;
-$primary-background: #660000;
-$secondary-color: #726658;
-$secondary-light: #9B8579;
-$logo-white: #FFFFFB;
-$logo-creme: #F8E7C1;
-$accent-color: #420e0e;
-$background-color: #fcf6e8;
-$anchor-gradient: -webkit-linear-gradient(left, $secondary-color 0%, $primary-color 50%);
-$header-gradient: -webkit-linear-gradient(bottom, $secondary-color, $secondary-light 80%, $secondary-color);
-$h1-gradient: -webkit-linear-gradient(bottom, $primary-color, #b4a48e 80%, $primary-color);
-
-$error-red: #aa3338;
-$error-red-background: #d8a2a4;
-
-$success-green: #048966;
-$success-green-background: #8decd3;
-$font: 'Varela Round', serif;
+@import 'mixins/scheme';
 
 *,
 *:after,
@@ -128,8 +103,9 @@ body {
   grid-template-areas: 'even nothing odd';
   transition: 0.3s;
 
-  .navigation .subject {
+  .navigation {
     &.pages ul li {
+      margin-bottom: 0;
       color: $secondary-color;
     }
     b { color: $primary-light; }
@@ -197,8 +173,13 @@ body {
   }
 }
 
-.subject .pages {
-    margin-top: -0.5em;
+.pages {
+  ul {
+    margin:0;
+  }
+  ul li{
+    margin: 0;
+  }
 }
 
 
@@ -666,7 +647,7 @@ img {
   position: relative;
   left: -50%;
   transform: translateX(-6%);
-  top: calc(100% - 152.5px);
+  top: calc(100% - 147.5px);
   height: 20em;
   width: 20em;
   padding-bottom: 1em;
