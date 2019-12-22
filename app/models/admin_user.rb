@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # These objects are the users that have permission to manage the crud
 class AdminUser < ApplicationRecord
   has_secure_password

@@ -2,33 +2,42 @@
 <html>
 <head>
   <title>Prophets &spades; <%= "#{@page_title}" if @page_title %></title>
+
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   <%= stylesheet_link_tag('//cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.css', media: 'all') %>
   <%= stylesheet_link_tag('//fonts.googleapis.com/css?family=Roboto:300,300italic,400,400italic,500,500italic,700,700italic', media: 'all') %>
   <%= stylesheet_link_tag('https://fonts.googleapis.com/css?family=Vollkorn+SC:400,600,700,900&display=swap', media: 'all') %>
+  <%= stylesheet_link_tag('https://fonts.googleapis.com/css?family=Varela+Round&display=swap', media: 'all') %>
   <%= stylesheet_link_tag('application', media: 'all') %>
   <%= favicon_link_tag('') %>
-  <%= csrf_meta_tags %>
-
 </head>
 
 <body>
 
   <div id="header">
-    <h1>Prophets</h1>
+    <div id="navigation" onmouseleave=makeHidden('navigation')>
+      <%= render(partial: 'layouts/navigation', locals: {subjects: @subjects} ) %>
+    </div>
+    <div id="animator">
+      <%= render partial: 'layouts/menu_image' %>
+    </div>
+    <div id="introduction">
+      <h1 id="name">Danny Oosthoek</h1>
+      <h2 id="job-title">Ruby on Rails Developer</h2>
+    </div>
   </div>
 
   <div id="main">
-    <div id="navigation">
-      <%= render(partial: 'layouts/navigation', locals: {subjects: @subjects} ) %>
-    </div>
     <div id="content">
       <%= yield %>
     </div>
-    <div class="clear"></div>
   </div>
 
   <div id="footer">
-    <p id="copyright">&copy; prophets.nl</p>
+    <p id="copyright">&copy; 2020 Danny Oosthoek</p>
   </div>
 
 </body>

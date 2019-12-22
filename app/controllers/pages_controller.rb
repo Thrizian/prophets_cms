@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # CRUD Operations for pages as a nested object to subjects.
 class PagesController < ApplicationController
   layout 'admin'
@@ -23,7 +21,7 @@ class PagesController < ApplicationController
 
   def create
     @page = Page.new(page_params)
-    @page.subject_id = @subject
+    @page.subject_id = @subject.id
 
     if @page.save
       flash[:notice] = 'Page saved successfully.'

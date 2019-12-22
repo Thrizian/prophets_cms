@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # The public controller uses the public layout to serve all
 # pages meant for the public as soon as: subjects, pages, sections
 # are checked to be visible.

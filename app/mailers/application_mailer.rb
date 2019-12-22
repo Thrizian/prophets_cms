@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # App mailer for more info see:
 # https://guides.rubyonrails.org/action_mailer_basics.html
 class ApplicationMailer < ActionMailer::Base

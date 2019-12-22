@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # for more information see:
 # https://guides.rubyonrails.org/active_record_basics.html
 class ApplicationRecord < ActiveRecord::Base

@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # The access controller handles
 # - redirection to the admin menu after successful login
 # - login form

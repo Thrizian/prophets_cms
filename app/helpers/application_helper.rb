@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # Application wide helpers hide here!
 module ApplicationHelper
   def error_messages_for(object)

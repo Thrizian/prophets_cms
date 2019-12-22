@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # CRUD Operations for sections as a nested object to pages
 class SectionsController < ApplicationController
   layout 'admin'

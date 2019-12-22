@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # The section contains all the content for a page in html or txt
 class Section < ApplicationRecord
 

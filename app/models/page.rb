@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # Pages are objects that contain sections and belong to subjects
 # They are the core element needed for constructing navigation and URI
 class Page < ApplicationRecord

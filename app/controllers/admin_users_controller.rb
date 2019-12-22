@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # Provides the CRUD for AdminUsers
 class AdminUsersController < ApplicationController
   layout 'admin'

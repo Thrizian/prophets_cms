@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # Basic AppController with forgery protection and a custom
 # method to confirm if the session contains the :user_id.
 # if so the user is authenticated.

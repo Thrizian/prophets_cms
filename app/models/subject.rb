@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # Subjects are allow for the grouping of pages in the navigation
 class Subject < ApplicationRecord
 
