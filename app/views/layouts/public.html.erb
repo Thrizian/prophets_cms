@@ -18,12 +18,13 @@
 <body>
 
   <div id="header">
-    <div id="navigation" onmouseleave=makeHidden('navigation')>
+    <div id="navigation" onmouseenter=makeVisible('odd','even'); onmouseleave=makeHidden('odd','even'); >
       <%= render(partial: 'layouts/navigation', locals: {subjects: @subjects} ) %>
+      <div id="animator" onmouseenter=makeVisible('odd','even'); onmouseleave=makeHidden('odd','even'); >
+        <%= render partial: 'layouts/menu_image' %>
+      </div>
     </div>
-    <div id="animator">
-      <%= render partial: 'layouts/menu_image' %>
-    </div>
+
     <div id="introduction">
       <h1 id="name">Danny Oosthoek</h1>
       <h2 id="job-title">Ruby on Rails Developer</h2>

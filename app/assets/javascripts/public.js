@@ -1,14 +1,22 @@
-function makeVisible(toggleElement) {
-    var e = document.getElementById(toggleElement);
-    if (e.style.opactiy != '1') {
-        e.style.opacity = '1';
+function makeVisible(firstElement, secondElement) {
+    var f = document.getElementById(firstElement);
+    var s = document.getElementById(secondElement);
+    if (f.style.opactiy != '1') {
+        f.style.opacity = '1';
+    }
+    if (s.style.opactiy != '1') {
+        s.style.opacity = '1';
     }
 };
 
-function makeHidden(toggleElement) {
-    var e = document.getElementById(toggleElement);
-    if (e.style.opacity != '0') {
-        e.style.opacity = '0';
+function makeHidden(firstElement, secondElement) {
+    var f = document.getElementById(firstElement);
+    var s = document.getElementById(secondElement);
+    if (f.style.opactiy != '0') {
+        f.style.opacity = '0';
+    }
+    if (s.style.opactiy != '0') {
+        s.style.opacity = '0';
     }
 };
 //

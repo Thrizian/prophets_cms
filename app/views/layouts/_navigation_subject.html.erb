@@ -1,0 +1,21 @@
+<% subjects.each do |s| %>
+  <div class="navigation subject">
+    <div class="subject name">
+      <b><%= s.name %></b>
+    </div>
+    <div class="pages">
+      <ul>
+        <% s.pages.visible.sorted.each do |p| %>
+          <li>
+            <%=
+              link_to_unless_current(
+                  p.name.downcase,
+                  public_show_path(p.permalink)
+              )
+            %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+<% end %>

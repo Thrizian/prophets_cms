@@ -1,23 +1,10 @@
 <% subjects ||= [] %>
-  <% subjects.each do |s| %>
-    <div class="navigation subject">
-      <div class="subject name">
-        <b><%= s.name %></b>
-      </div>
-      <div class="subject pages">
-        <ul>
-          <% s.pages.visible.sorted.each do |p| %>
-            <li>
-              <%=
-                link_to_unless_current(
-                    p.name.downcase,
-                    public_show_path(p.permalink)
-                )
-              %>
-            </li>
-          <% end %>
-        </ul>
-      </div>
+<% evenSubjects, oddSubjects = subjects.partition.with_index { |_,i| i.even? } %>
+<div id="even" onmouseenter=makeVisible('odd','even'); onmouseleave=makeHidden('odd','even'); >
+  <%= render partial: 'layouts/navigation_subject', locals: {subjects: evenSubjects} %>
+</div>
+<div id="odd" onmouseenter=makeVisible('odd','even'); onmouseleave=makeHidden('odd','even'); >
+  <%= render partial: 'layouts/navigation_subject', locals: {subjects: oddSubjects} %>
+</div>
 
-    </div>
-  <% end %>
+
