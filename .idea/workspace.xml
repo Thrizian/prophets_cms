@@ -7,7 +7,7 @@
   <component name="ChangeListManager">
     <list default="true" id="c4b99c22-5b34-4403-a72f-e4eff0ed4f06" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/primary.css.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/primary.css.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/public/show.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/public/show.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/layouts/public.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layouts/public.html.erb" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -36,29 +36,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="public.html.erb" pinned="false" current-in-tab="false">
+      <file leaf-file-name="public.html.erb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/layouts/public.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="73">
-              <caret line="22" column="64" selection-start-line="22" selection-start-column="64" selection-end-line="22" selection-end-column="64" />
+            <state relative-caret-position="284">
+              <caret line="41" column="32" selection-start-line="41" selection-start-column="32" selection-end-line="41" selection-end-column="32" />
+              <folding>
+                <element signature="e#1459#1465#0#HTML" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="show.html.erb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/public/show.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="40" lean-forward="true" selection-start-column="40" selection-end-column="40" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="primary.css.scss" pinned="false" current-in-tab="true">
+      <file leaf-file-name="primary.css.scss" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/primary.css.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="145">
-              <caret line="107" column="17" selection-start-line="107" selection-start-column="17" selection-end-line="107" selection-end-column="17" />
+            <state relative-caret-position="-1950">
+              <caret line="68" column="41" selection-start-line="68" selection-start-column="41" selection-end-line="68" selection-end-column="41" />
             </state>
           </provider>
         </entry>
@@ -90,7 +84,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>Rails.application.config.session_store</find>
       <find>bcrypt</find>
       <find>filter</find>
       <find>rubocop</find>
@@ -120,6 +113,7 @@
       <find>odd</find>
       <find>#animator</find>
       <find>#content</find>
+      <find>#protector</find>
     </findStrings>
     <replaceStrings>
       <replace>Page</replace>
@@ -197,9 +191,9 @@
         <option value="$PROJECT_DIR$/app/views/layouts/_menu_image.html.erb" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/public.js" />
         <option value="$PROJECT_DIR$/app/views/layouts/_navigation.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/layouts/public.html.erb" />
         <option value="$PROJECT_DIR$/app/views/public/show.html.erb" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/primary.css.scss" />
+        <option value="$PROJECT_DIR$/app/views/layouts/public.html.erb" />
       </list>
     </option>
   </component>
@@ -222,9 +216,9 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds" extendedState="4">
-    <option name="x" value="985" />
+    <option name="x" value="893" />
     <option name="y" value="25" />
-    <option name="width" value="935" />
+    <option name="width" value="1027" />
     <option name="height" value="1055" />
   </component>
   <component name="ProjectView">
@@ -488,24 +482,24 @@
       <workItem from="1576203799689" duration="30130000" />
       <workItem from="1576837068613" duration="28502000" />
       <workItem from="1576873266350" duration="73410000" />
-      <workItem from="1577018615872" duration="4020000" />
+      <workItem from="1577018615872" duration="5485000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="140727000" />
+    <option name="totallyTimeSpent" value="142192000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="985" y="25" width="935" height="1055" extended-state="4" />
+    <frame x="893" y="25" width="1027" height="1055" extended-state="4" />
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50187266" side_tool="true" weight="0.45502645" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="10" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49197862" visible="true" weight="0.45502645" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49197862" visible="true" weight="0.45502645" />
       <window_info anchor="bottom" id="Terminal" order="9" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.33475935" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.30477118" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49812734" weight="0.32910052" />
@@ -900,24 +894,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/layouts/public.html.erb">
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/primary.css.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="73">
-          <caret line="22" column="64" selection-start-line="22" selection-start-column="64" selection-end-line="22" selection-end-column="64" />
+        <state relative-caret-position="-1950">
+          <caret line="68" column="41" selection-start-line="68" selection-start-column="41" selection-end-line="68" selection-end-column="41" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/public/show.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state>
-          <caret column="40" lean-forward="true" selection-start-column="40" selection-end-column="40" />
+          <caret column="40" selection-start-column="40" selection-end-column="40" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/primary.css.scss">
+    <entry file="file://$PROJECT_DIR$/app/views/layouts/public.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="145">
-          <caret line="107" column="17" selection-start-line="107" selection-start-column="17" selection-end-line="107" selection-end-column="17" />
+        <state relative-caret-position="284">
+          <caret line="41" column="32" selection-start-line="41" selection-start-column="32" selection-end-line="41" selection-end-column="32" />
+          <folding>
+            <element signature="e#1459#1465#0#HTML" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

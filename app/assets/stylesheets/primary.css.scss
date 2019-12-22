@@ -39,7 +39,7 @@ html {
 
 body {
   display: grid;
-  grid-template-columns: minmax(26em, 38.197%) 1fr;
+  grid-template-columns: minmax(25em, 38.197%) 1fr;
   grid-template-rows: 1fr 2em;
   grid-template-areas:
     "head main"
@@ -59,16 +59,17 @@ body {
 }
 
 #header {
-  padding: 2em;
+  padding: 1em;
   grid-area: head;
   height: 100%;
   width: 100%;
   background-color: $primary-background;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 40% 10% 1fr;
+  grid-template-rows: minmax(350px, auto) 115px 1fr;
   grid-template-areas:
     "navigation"
+    "protector"
     "introduction";
   align-items: center;
   justify-items: center;
@@ -84,6 +85,11 @@ body {
     align-self: last baseline;
     margin-bottom: 0;
   }
+}
+
+#protector {
+  height:100%;
+  width: 100%;
 }
 
 #footer {
@@ -149,8 +155,6 @@ body {
 #introduction {
   color: $primary-light;
   grid-area: introduction;
-  margin-top: 2em;
-  padding-top: 100px;
   height: 100%;
   width: 100%;
   text-align:center;
