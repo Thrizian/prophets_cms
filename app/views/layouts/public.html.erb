@@ -20,7 +20,7 @@
   <div id="header">
     <div id="navigation" onmouseenter=makeVisible('odd','even'); onmouseleave=makeHidden('odd','even'); >
       <%= render(partial: 'layouts/navigation', locals: {subjects: @subjects} ) %>
-      <div id="animator" onmouseenter=makeVisible('odd','even'); onmouseleave=makeHidden('odd','even'); >
+      <div id="animator" onmouseover=makeVisible('odd','even'); onmouseenter=makeVisible('odd','even'); onmouseleave=makeHidden('odd','even'); >
         <%= render partial: 'layouts/menu_image' %>
       </div>
     </div>

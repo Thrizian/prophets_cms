@@ -6,14 +6,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c4b99c22-5b34-4403-a72f-e4eff0ed4f06" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/app/views/layouts/_navigation_subject.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.rakeTasks" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.rakeTasks" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/javascripts/public.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/javascripts/public.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/primary.css.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/primary.css.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/layouts/_menu_image.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layouts/_menu_image.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/layouts/_navigation.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layouts/_navigation.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/layouts/admin.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layouts/admin.html.erb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/layouts/public.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layouts/public.html.erb" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
@@ -55,8 +48,8 @@
       <file leaf-file-name="public.html.erb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/layouts/public.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="178">
-              <caret line="20" column="104" selection-start-line="20" selection-start-column="104" selection-end-line="20" selection-end-column="104" />
+            <state relative-caret-position="208">
+              <caret line="22" column="64" selection-start-line="22" selection-start-column="64" selection-end-line="22" selection-end-column="64" />
             </state>
           </provider>
         </entry>
@@ -64,8 +57,8 @@
       <file leaf-file-name="primary.css.scss" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/primary.css.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="249">
-              <caret line="95" column="16" selection-start-line="95" selection-start-column="16" selection-end-line="95" selection-end-column="16" />
+            <state relative-caret-position="99">
+              <caret line="155" column="19" selection-start-line="155" selection-start-column="19" selection-end-line="155" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -495,12 +488,12 @@
       <workItem from="1576203799689" duration="30130000" />
       <workItem from="1576837068613" duration="28502000" />
       <workItem from="1576873266350" duration="73410000" />
-      <workItem from="1577018615872" duration="2286000" />
+      <workItem from="1577018615872" duration="2976000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="138993000" />
+    <option name="totallyTimeSpent" value="139683000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="985" y="25" width="935" height="1055" extended-state="4" />
@@ -916,15 +909,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/layouts/public.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="178">
-          <caret line="20" column="104" selection-start-line="20" selection-start-column="104" selection-end-line="20" selection-end-column="104" />
+        <state relative-caret-position="208">
+          <caret line="22" column="64" selection-start-line="22" selection-start-column="64" selection-end-line="22" selection-end-column="64" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/primary.css.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="249">
-          <caret line="95" column="16" selection-start-line="95" selection-start-column="16" selection-end-line="95" selection-end-column="16" />
+        <state relative-caret-position="99">
+          <caret line="155" column="19" selection-start-line="155" selection-start-column="19" selection-end-line="155" selection-end-column="19" />
         </state>
       </provider>
     </entry>
