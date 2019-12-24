@@ -14,7 +14,7 @@ This application is built with: ruby 2.6.3p62
 
 * Configuration
 
-To get the application up and running you will need to create an AdminUser through terminal and run it. Creating content can then be done visiting the localhost:3000/admin where you should then be able to login with the user made earlier.
+To get the application up and running you will need to create an AdminUser through terminal after which you can run the application. Creating content can then be done visiting the localhost:3000/admin where you should then be able to login with the user made earlier.
 
 * Database creation
 
