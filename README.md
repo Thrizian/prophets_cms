@@ -13,15 +13,19 @@ As well as a HMT relation that is going to keep track of which AdminUsers edited
 This application is built with: ruby 2.6.3p62
 
 * Configuration
+
 To get the application up and running you will need to create an AdminUser through terminal and run it. Creating content can then be done visiting the localhost:3000/admin where you should then be able to login with the user made earlier.
 
 * Database creation
+
 In development, just run `rake db:migrate` it'll create a SQLite3 db
 
 * How to run the test suite
+
 _work in progress_
 
 * Services (job queues, cache servers, search engines, etc.)
+
 _none yet_
 
 * Deployment instructions
