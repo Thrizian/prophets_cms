@@ -1,26 +1,6 @@
 /* Loads after primary and only for admin */
 @import 'mixins/scheme';
 
-span.status {
-  display: inherit;
-  width: 1em;
-  height: 1em;
-  margin: 0.25em auto;
-  padding: 0;
-  border: 1px solid $accent-color;
-
-  &.true  { background: $success-green; color: $success-green; }
-  &.false { background: $error-red;   color: $error-red; }
-}
-
-.notice {
-  border: 1px solid $success-green;
-  border-radius: .4rem;
-  background-color: $success-green-background;
-  padding: 1em;
-  color: $success-green;
-}
-
 .error {
   border: 1px solid $error-red;
   border-radius: .4rem;
@@ -60,4 +40,8 @@ span.status {
     text-fill-color: unset;
     -webkit-text-fill-color: unset;
   }
+}
+
+.expanded {
+  animation: expand forwards;
 }

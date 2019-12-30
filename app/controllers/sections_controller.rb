@@ -21,7 +21,7 @@ class SectionsController < ApplicationController
 
   def create
     @section = Section.new(section_params)
-    @section.page_id = @page
+    @section.page_id = @page.id
 
     if @section.save
       flash[:notice] = 'Section saved successfully.'

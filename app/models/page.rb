@@ -2,6 +2,7 @@
 # They are the core element needed for constructing navigation and URI
 class Page < ApplicationRecord
 
+  acts_as_list
   acts_as_list scope: :subject
 
   belongs_to :subject, optional: false

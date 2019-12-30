@@ -10,7 +10,7 @@
             <%=
               link_to_unless_current(
                   p.name.downcase,
-                  public_show_path(p.permalink)
+                  public_show_path(p.permalink), {remote: true, onclick: "toggle('expanded')"}
               )
             %>
           </li>

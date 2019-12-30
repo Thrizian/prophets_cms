@@ -5,27 +5,31 @@
   <%= link_to('<< To Admin Menu', access_menu_path, class: 'admin-menu') %>
   <br/>
   <%= link_to('<< To Pages', pages_path(subject_id: @page.subject.id), class: 'action index') %>
-  <table>
-    <tr>
-      <th>#</th>
-      <th>Name</th>
-      <th>Page ID</th>
-      <th>Visible</th>
-      <th>Actions</th>
-    </tr>
-    <% @sections.each do |s| %>
+  <table id="table-sections">
+    <thead>
       <tr>
-        <td><%= s.position %></td>
-        <td><%= s.name%></td>
-        <td class='center'><%= s.page_id %></td>
-        <td class='center'><%= status_tag(s.visible) %></td>
-        <td class='actions'>
-          <%= link_to('Show', section_path(s, page_id: @page.id), class: 'action show') %>
-          <%= link_to('Edit', edit_section_path(s, page_id: @page.id), class: 'action edit') %>
-          <%= link_to('Delete', delete_section_path(s, page_id: @page.id), class: 'action delete') %>
-        </td>
+          <th>#</th>
+          <th>Name</th>
+          <th>Page ID</th>
+          <th>Visible</th>
+          <th>Actions</th>
       </tr>
-    <% end %>
+    </thead>
+    <tbody>
+      <% @sections.each do |s| %>
+        <tr>
+          <td><%= s.position %></td>
+          <td><%= s.name%></td>
+          <td class='center'><%= s.page_id %></td>
+          <td class='center'><%= status_tag(s.visible) %></td>
+          <td class='actions'>
+            <%= link_to('Show', section_path(s, page_id: @page.id), class: 'action show') %>
+            <%= link_to('Edit', edit_section_path(s, page_id: @page.id), class: 'action edit') %>
+            <%= link_to('Delete', delete_section_path(s, page_id: @page.id), class: 'action delete') %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
   </table>
   <%= link_to('Add new section', new_section_path(page_id: @page.id), class: 'action new')%>
 </div>

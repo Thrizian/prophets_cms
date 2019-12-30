@@ -11,19 +11,28 @@
 //$logo-creme: #F8E7C1;
 
 /* THEME 2 */
-$primary-color: #97131F;
-$primary-light: #EF4136;
+$primary-dark: #420e0e;
 $primary-background: #660000;
-$background-color: #fcf6e8;
-$secondary-color: #726658;
-$secondary-light: #9B8579;
-$accent-color: #420e0e;
-$logo-white: #FFFFFB;
-$logo-creme: #F8E7C1;
+$primary-accent: #97131F;
+$primary-color: #EF4136;
+$primary-tint: #f3746c;
+$primary-light: #f9bfbc;
+$secondary-background: #282624;
+$secondary-accent: #56534e;
+$secondary-color: #88837a;
+$secondary-tint: #e3dbcc;
+$secondary-light: #fffffb;
+
+//$background-color: $secondary-light;
+//$secondary-color: #726658;
+//$secondary-light: #e3dbcc;
+//$accent-color: #420e0e;
+$logo-white: $secondary-light;
+$logo-creme: $secondary-tint;
 
 /* GRADIENTS */
 $anchor-gradient: -webkit-linear-gradient(left, $secondary-color 0%, $primary-color 50%);
-$header-gradient: -webkit-linear-gradient(bottom, $secondary-color, $secondary-light 80%, $secondary-color);
+$header-gradient: -webkit-linear-gradient(bottom, $primary-color, $primary-accent 80%, $primary-color);
 $h1-gradient: -webkit-linear-gradient(bottom, $primary-color, #b4a48e 80%, $primary-color);
 $font: 'Varela Round', serif;
 

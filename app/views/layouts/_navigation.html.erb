@@ -1,34 +1,38 @@
 <% if origin != 'admin' %>
   <% subjects ||= [] %>
   <% evenSubjects, oddSubjects = subjects.partition.with_index { |_,i| i.even? } %>
-  <div id="even" onmouseenter=makeVisible('odd','even'); onmouseleave=makeHidden('odd','even'); >
+  <div id="even"; >
     <%= render partial: 'layouts/navigation_subject', locals: {subjects: evenSubjects} %>
   </div>
-  <div id="odd" onmouseenter=makeVisible('odd','even'); onmouseleave=makeHidden('odd','even'); >
+  <div id="odd">
     <%= render partial: 'layouts/navigation_subject', locals: {subjects: oddSubjects} %>
   </div>
 <% else %>
-  <div id="even" onmouseenter=makeVisible('odd','even'); onmouseleave=makeHidden('odd','even'); >
+  <div id="even">
     <div class="navigation subject">
       <div class="subject name">
         <b>Manage</b>
       </div>
       <div class="pages">
         <ul>
-          <li><%= link_to_unless_current('Admins', admin_users_path) %></li>
-          <li><%= link_to_unless_current('Content', subjects_path) %></li>
+          <li><%= link_to_unless_current('Admins', admin_users_path, {remote: true}) %></li>
+          <li><%= link_to_unless_current('Content', subjects_path, {remote: true}) %></li>
         </ul>
       </div>
     </div>
   </div>
-  <div id="odd" onmouseenter=makeVisible('odd','even'); onmouseleave=makeHidden('odd','even'); >
+  <div id="odd" >
     <div class="navigation subject">
       <div class="subject name">
         <b>Actions</b>
       </div>
       <div class="pages">
         <ul>
-          <li><%= link_to_unless_current('Logout', access_logout_path) %></li>
+          <% if session[:user_id] %>
+            <li><%= link_to_unless_current('Logout', access_logout_path) %></li>
+          <% else %>
+            <li><%= link_to_unless_current('Login', access_login_path) %></li>
+          <% end %>
         </ul>
       </div>
     </div>

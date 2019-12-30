@@ -1,0 +1,261 @@
+/*                       #####################                    */
+/*                       #####################                    */
+/*                       ### SVG Animation ###                    */
+/*                       #####################                    */
+/*                       #####################                    */
+/* This partial contains styling and animations for the menu svg. */
+
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} {
+    @content;
+  }
+  @-moz-keyframes #{$name} {
+    @content;
+  }
+  @-ms-keyframes #{$name} {
+    @content;
+  }
+  @keyframes #{$name} {
+    @content;
+  }
+}
+
+@mixin transform($property) {
+  -webkit-transform: $property;
+  -ms-transform: $property;
+  transform: $property;
+}
+
+
+#outer-ruby, #red-hex  { fill: $primary-color; }
+#inner-ruby            { fill: $primary-accent; }
+#white-curve           { fill: $secondary-light; opacity: 0.2; }
+#el_dotted-hex         { fill: $secondary-tint; }
+#el_gold-hex-path      { fill: $secondary-color; }
+#el_body, #el_head     { fill: $logo-white; }
+#el_wings              { fill: $logo-creme; }
+
+#full-animation {
+  z-index:1;
+  pointer-events: none;
+  height: 20em;
+  width: 20em;
+  transform: translateX(-10em);
+  position: relative;
+  top: calc(-135%);
+  left: 50%;
+
+  * {
+    -webkit-animation-duration: 3s;
+    animation-duration: 3s;
+    -webkit-animation-iteration-count: 1;
+    animation-iteration-count: 1;
+    -webkit-animation-play-state: running;
+    animation-play-state: running;
+    -webkit-animation-timing-function: cubic-bezier(0, 0, 1, 1);
+    animation-timing-function: cubic-bezier(0, 0, 1, 1);
+  }
+
+  &:hover {
+    #backdrop{
+      -webkit-animation-name: kf_backdrop_an_backdrop-opacity;
+      animation-name: kf_backdrop_an_backdrop-opacity;
+    }
+
+    #el_top-outline{
+      display: unset;
+      -webkit-animation-name: kf_el_top-outline_an_TAykKD49S, kf_el_top-outline_an_top-outline-stroke-dash, kf_el_top-outline_an_top-outline-opacity;
+      animation-name: kf_el_top-outline_an_TAykKD49S, kf_el_top-outline_an_top-outline-stroke-dash, kf_el_top-outline_an_top-outline-opacity;
+    }
+
+    #el_red-hex{
+      -webkit-animation-name: kf_el_red-hex_an_red-hex-opacity;
+      animation-name: kf_el_red-hex_an_red-hex-opacity;
+    }
+
+    #el_red-hex_an_scale{
+      -webkit-animation-name: kf_el_red-hex_an_scale;
+      animation-name: kf_el_red-hex_an_scale;
+    }
+
+    #group1{
+      display: unset;
+      -webkit-animation-name: kf_group1_an_fade-in-last;
+      animation-name: kf_group1_an_fade-in-last;
+    }
+
+    #group2{
+      display: unset;
+      -webkit-animation-name: kf_group2_an_fade-in-second;
+      animation-name: kf_group2_an_fade-in-second;
+    }
+
+    #group3{
+      display: unset;
+      -webkit-animation-name: kf_group3_an_fade-in-third;
+      animation-name: kf_group3_an_fade-in-third;
+    }
+
+    #group4{
+      display: unset;
+      -webkit-animation-name: kf_group4_an_fade-in-first;
+      animation-name: kf_group4_an_fade-in-first;
+    }
+  }
+}
+
+/* backdrop */
+@include keyframes(kf_backdrop_an_backdrop-opacity) {
+  0%     { opacity: 1; }
+  16.67% { opacity: 0.5; }
+  100%   { opacity: 1; }
+}
+
+#backdrop{
+  fill: $primary-dark;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-animation-timing-function: cubic-bezier(0, 0, 1, 1);
+  animation-timing-function: cubic-bezier(0, 0, 1, 1);
+}
+#backdrop2 {
+  fill: $primary-background;
+}
+
+/* blocks */
+@include keyframes(kf_group1_an_fade-in-last) {
+  0%     { opacity: 0; }
+  83.33% { opacity: 0; }
+  100%   { opacity: 1; }
+}
+
+@include keyframes(kf_group2_an_fade-in-second) {
+  0%     { opacity: 0; }
+  50%    { opacity: 0; }
+  66.67% { opacity: 1; }
+  100%   { opacity: 1; }
+}
+
+@include keyframes(kf_group3_an_fade-in-third) {
+  0%     { opacity: 0; }
+  66.67% { opacity: 0; }
+  83.33% { opacity: 1; }
+  100%   { opacity: 1; }
+}
+
+@include keyframes(kf_group4_an_fade-in-first) {
+  0%     { opacity: 0; }
+  33.33% { opacity: 0; }
+  50%    { opacity: 1; }
+  100%   { opacity: 1; }
+}
+
+#group1, #group2, #group3, #group4 {
+  display: none;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-animation-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
+  animation-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
+}
+
+.box1 { fill: $primary-color; opacity: 0.5; }
+.box2 { fill: none;    stroke: $primary-background; }
+.box3 { fill: $secondary-tint; opacity: 0.5; }
+
+/* gold-hex */
+@include keyframes(kf_el_gold_hex_an_gold_hex) {
+  0%{
+    @include transform(translate(149.576171875px, 137.134765625px) scale(1, 1) rotate(360deg) translate(-149.576171875px, -137.134765625px));
+    opacity: 1;
+  }
+  50%{
+    @include transform(translate(149.576171875px, 137.134765625px) scale(1.2, 1.2) rotate(180deg) translate(-149.576171875px, -137.134765625px));
+    opacity: 0.2;
+  }
+  100%{
+    @include transform(translate(149.576171875px, 137.134765625px) scale(1, 1) rotate(0deg) translate(-149.576171875px, -137.134765625px));
+    opacity: 1;
+  }
+}
+
+#el_gold-hex{
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-timing-function: cubic-bezier(0, 0, 1, 1);
+  animation-timing-function: cubic-bezier(0, 0, 1, 1);
+  -webkit-animation-name: kf_el_gold_hex_an_gold_hex;
+  animation-name: kf_el_gold_hex_an_gold_hex;
+}
+
+/* red-hex */
+@include keyframes(kf_el_red_hex_an_rotation) {
+  0%{
+    @include transform(translate(149.576171875px, 137.1328125px) rotate(0deg) translate(-149.576171875px, -137.1328125px));
+  }
+  100%{
+    @include transform(translate(149.576171875px, 137.1328125px) rotate(180deg) translate(-149.576171875px, -137.1328125px));
+  }
+}
+
+@include keyframes(kf_el_red-hex_an_red-hex-opacity) {
+  0%     { opacity: 1;   }
+  50%    { opacity: 0.4; }
+  100%   { opacity: 1;   }
+}
+
+#el_red-hex{
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-timing-function: cubic-bezier(0, 0, 1, 1);
+  animation-timing-function: cubic-bezier(0, 0, 1, 1);
+}
+#el_red-hex_an_rotation{
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-animation-timing-function: cubic-bezier(0, 0, 1, 1);
+  animation-timing-function: cubic-bezier(0, 0, 1, 1);
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-name: kf_el_red_hex_an_rotation;
+  animation-name: kf_el_red_hex_an_rotation;
+}
+
+#el_red-hex_an_scale{
+  @include transform(translate(149.576171875px, 137.1328125px) scale(1.2, 1.2) translate(-149.576171875px, -137.1328125px));
+}
+
+/* top-outline */
+@include keyframes(kf_el_top-outline_an_top-outline-opacity) {
+  0%     { opacity: 0; }
+  5.56%  { opacity: 1; }
+  100%   { opacity: 1; }
+}
+
+@include keyframes(kf_el_top-outline_an_top-outline-stroke-dash) {
+  0%   { stroke-dasharray: 0, 483, 0; }
+  15%  { stroke-dasharray: 160.48, 160.48, 160.48; }
+  20%  { stroke-dasharray: 240.72, 0, 240.72; }
+  100% { stroke-dasharray: 240.72, 0, 240.72; }
+}
+
+#el_top-outline{
+  display: none;
+  fill: none;
+  stroke: $secondary-tint;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-animation-timing-function: cubic-bezier(0, 0, 1, 1), cubic-bezier(0, 0, 1, 1), cubic-bezier(0, 0, 1, 1);
+  animation-timing-function: cubic-bezier(0, 0, 1, 1), cubic-bezier(0, 0, 1, 1), cubic-bezier(0, 0, 1, 1);
+  stroke-dasharray: 0, 481.44, 0;
+  stroke-width: 2px;
+}
+
+svg * {
+  pointer-events: visibleFill;
+}

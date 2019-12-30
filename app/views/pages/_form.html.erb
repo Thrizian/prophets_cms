@@ -1,28 +1,28 @@
 <%= error_messages_for(f.object) %>
 
-<table summary="pages form fields">
-  <tr>
-    <th><%= f.label(:position) %></th>
-    <td><%= f.select(:position, 1..@page_count) %></td>
-  </tr>
+<div class="table" summary="pages form fields">
+  <div>
+    <%= f.label(:position) %>
+    <%= f.select(:position, 1..@page_count) %>
+  </div>
 
-  <tr>
-    <th><%= f.label(:name) %></th>
-    <td><%= f.text_field(:name) %></td>
-  </tr>
+  <div>
+    <%= f.label(:name) %>
+    <%= f.text_field(:name) %>
+  </div>
 
-  <tr>
-    <th><%= f.label(:permalink) %></th>
-    <td><%= f.text_field(:permalink) %></td>
-  </tr>
+  <div>
+    <%= f.label(:permalink) %>
+    <%= f.text_field(:permalink) %>
+  </div>
 
-  <tr>
-    <th><%= f.label(:subject) %></th>
-    <td><%= f.object.subject.name %></td>
-  </tr>
+  <div>
+    <%= f.label(:subject) %>
+    <%= f.object.subject.name %>
+  </div>
 
-  <tr>
-    <th><%= f.label(:visible) %></th>
-    <td><%= f.check_box(:visible) %></td>
-  </tr>
-</table>
+  <div>
+    <%= f.label(:visible) %>
+    <%= f.check_box(:visible) %>
+  </div>
+</div>

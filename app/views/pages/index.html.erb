@@ -5,32 +5,36 @@
   <%= link_to('<< To Admin Menu', access_menu_path, class: 'admin-menu')%>
   <br/>
   <%= link_to('<< To Subjects', subjects_path, class: 'action index')%>
-  <table>
-    <tr>
-      <th>#</th>
-      <th>Name</th>
-      <th>Permalink</th>
-      <th>Subject ID</th>
-      <th>Sections</th>
-      <th>Visible</th>
-      <th>Actions</th>
-    </tr>
-    <% @pages.each do |p| %>
+  <table id="table-pages">
+    <thead>
       <tr>
-        <td><%= p.position %></td>
-        <td><%= p.name%></td>
-        <td><%= p.permalink %></td>
-        <td><%= p.subject_id %></td>
-        <td class='center'><%= p.sections.size %></td>
-        <td class='center'><%= status_tag(p.visible) %></td>
-        <td class='actions'>
-          <%= link_to('View Sections', sections_path(page_id: p.id), class: 'action index') %> |
-          <%= link_to('Show', page_path(p, subject_id: @subject.id), class: 'action show') %> |
-          <%= link_to('Edit', edit_page_path(p, subject_id: @subject.id), class: 'action edit') %> |
-          <%= link_to('Delete', delete_page_path(p, subject_id: @subject.id), class: 'action delete') %>
-        </td>
+        <th>#</th>
+        <th>Name</th>
+        <th>Permalink</th>
+        <th>Subject ID</th>
+        <th>Sections</th>
+        <th>Visible</th>
+        <th>Actions</th>
       </tr>
-    <% end %>
+    </thead>
+    <tbody>
+      <% @pages.each do |p| %>
+        <tr>
+          <td><%= p.position %></td>
+          <td><%= p.name%></td>
+          <td><%= p.permalink %></td>
+          <td><%= p.subject_id %></td>
+          <td class='center'><%= p.sections.size %></td>
+          <td class='center'><%= status_tag(p.visible) %></td>
+          <td class='actions'>
+            <%= link_to('View Sections', sections_path(page_id: p.id), class: 'action index') %> |
+            <%= link_to('Show', page_path(p, subject_id: @subject.id), class: 'action show') %> |
+            <%= link_to('Edit', edit_page_path(p, subject_id: @subject.id), class: 'action edit') %> |
+            <%= link_to('Delete', delete_page_path(p, subject_id: @subject.id), class: 'action delete') %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
   </table>
   <%= link_to('Add new page', new_page_path(subject_id: @subject.id), class: 'action new')%>
 </div>

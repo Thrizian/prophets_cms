@@ -4,13 +4,11 @@
     <title>Prophets CMS &spades; <%= @page_title || 'Admin Area' %></title>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_link_tag('//cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.css', media: 'all') %>
-    <%= stylesheet_link_tag('https://fonts.googleapis.com/css?family=Varela+Round&display=swap', media: 'all') %>
-    <%= stylesheet_link_tag('application', media: 'all') %>
     <%= stylesheet_link_tag('admin', media: 'all') %>
     <%= favicon_link_tag('') %>
   </head>
 
-  <body>
+  <body class="expanded">
     <div id="header">
       <%= render partial: 'layouts/headers', locals: {origin: 'admin'} %>
       <div id="introduction">
@@ -19,16 +17,16 @@
     </div>
 
     <div id="main">
-      <% if flash[:notice].present? %>
-        <div class="notice">
-          <%= flash[:notice] %>
-        </div>
-      <% elsif flash[:error].present? %>
-        <div class="error">
-          <%= flash[:error] %>
-        </div>
-      <% end %>
       <div id="content">
+        <% if flash[:notice].present? %>
+          <div class="notice">
+            <%= flash[:notice] %>
+          </div>
+        <% elsif flash[:error].present? %>
+          <div class="error">
+            <%= flash[:error] %>
+          </div>
+        <% end %>
         <%= yield %>
       </div>
     </div>

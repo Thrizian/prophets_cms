@@ -8,13 +8,12 @@
 
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   <%= stylesheet_link_tag('//cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.css', media: 'all') %>
-  <%= stylesheet_link_tag('https://fonts.googleapis.com/css?family=Varela+Round&display=swap', media: 'all') %>
-  <%= stylesheet_link_tag('admin', media: 'all') %>
+  <%= stylesheet_link_tag('application', media: 'all') %>
   <%= favicon_link_tag('') %>
 </head>
 
-<body>
-
+<body class=<%= controller_name == 'public' && action_name == 'index' ? '' : 'expanded'%>>
+  <div id="void"></div>
   <div id="header">
     <%= render partial: 'layouts/headers', locals: {origin: 'public'} %>
     <div id="introduction">
@@ -22,7 +21,7 @@
       <h2 id="job-title">Ruby on Rails Developer</h2>
     </div>
   </div>
-
+  <div id="void2"></div>
 
   <div id="main">
     <div id="content">

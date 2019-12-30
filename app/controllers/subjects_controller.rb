@@ -8,6 +8,11 @@ class SubjectsController < ApplicationController
 
   def index
     @subjects = Subject.sorted
+
+    respond_to do |format|
+      format.js
+      format.html
+    end
   end
 
   def show; end

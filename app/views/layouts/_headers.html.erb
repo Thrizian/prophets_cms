@@ -1,7 +1,9 @@
-<div id="navigation" onmouseenter=makeVisible('odd','even'); onmouseleave=makeHidden('odd','even'); >
-  <%= render(partial: 'layouts/navigation', locals: {subjects: @subjects, origin: origin} ) %>
-  <div id="animator" onmouseover=makeVisible('odd','even'); onmouseenter=makeVisible('odd','even'); onmouseleave=makeHidden('odd','even'); >
-    <%= render partial: 'layouts/menu_image' %>
-  </div>
+<input type="checkbox" id="navigation-toggle" />
+<div id="navigation" >
+    <%= render(partial: 'layouts/navigation', locals: {subjects: @subjects, origin: origin} ) %>
 </div>
-<div id="protector"></div>
+<div id="animator">
+  <label for="navigation-toggle">
+    <%= render partial: 'layouts/menu_image' %>
+  </label>
+</div>
