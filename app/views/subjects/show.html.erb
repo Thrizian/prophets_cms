@@ -2,7 +2,8 @@
 
 <div class="subjects show">
   <h2>Showing Subject <%= @subject.name %></h2>
-  <%= link_to('<< Back to index', subjects_path, class: 'back-link') %>
+
+  <%= render partial: 'back_to_index' %>
 
   <table summary="Subject detail view">
     <tr>

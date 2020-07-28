@@ -5,31 +5,29 @@
   <%= link_to('<< To Admin Menu', access_menu_path, class: 'admin-menu') %>
   <br/>
   <%= link_to('<< To Pages', pages_path(subject_id: @page.subject.id), class: 'action index') %>
-  <table id="table-sections">
-    <thead>
-      <tr>
-          <th>#</th>
-          <th>Name</th>
-          <th>Page ID</th>
-          <th>Visible</th>
-          <th>Actions</th>
-      </tr>
-    </thead>
-    <tbody>
+  <crud-table id="table-sections">
+    <headers class="table-sections">
+      <p>#</p>
+      <p>Name</p>
+      <p>Page ID</p>
+      <p>Visible</p>
+      <p>Actions</p>
+    </headers>
+    <data>
       <% @sections.each do |s| %>
-        <tr>
-          <td><%= s.position %></td>
-          <td><%= s.name%></td>
-          <td class='center'><%= s.page_id %></td>
-          <td class='center'><%= status_tag(s.visible) %></td>
-          <td class='actions'>
-            <%= link_to('Show', section_path(s, page_id: @page.id), class: 'action show') %>
-            <%= link_to('Edit', edit_section_path(s, page_id: @page.id), class: 'action edit') %>
+        <data-segment class="table-sections">
+          <p><%= s.position %></p>
+          <p><%= s.name%></p>
+          <p class='center tiny-cell'><%= s.page_id %></p>
+          <p class='center tiny-cell'><%= status_tag(s.visible) %></p>
+          <p class='actions'>
+            <%= link_to('Show', section_path(s, page_id: @page.id), class: 'action show') %> |
+            <%= link_to('Edit', edit_section_path(s, page_id: @page.id), class: 'action edit') %> |
             <%= link_to('Delete', delete_section_path(s, page_id: @page.id), class: 'action delete') %>
-          </td>
-        </tr>
+          </p>
+        </data-segment>
       <% end %>
-    </tbody>
-  </table>
+    </data>
+  </crud-table>
   <%= link_to('Add new section', new_section_path(page_id: @page.id), class: 'action new')%>
 </div>

@@ -2,7 +2,8 @@
 
 <div class="sections delete">
   <h2>Delete Section <%= @section.name %></h2>
-  <%= link_to('<< Back to index', sections_path(page_id: @page.id), class: 'back-link') %>
+
+  <%= link_to('<< Back to Sections', sections_path(page_id: @page) ) %>
 
   <%= form_for(@section, url: section_path(@section, page_id: @page.id), method: 'delete') do |f| %>
     <p>Are you sure you want to permanently delete this section?</p>

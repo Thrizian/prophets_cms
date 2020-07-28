@@ -1,0 +1,135 @@
+body {
+  grid-template-columns: 100vw;
+  grid-template-rows: fit-content(0) auto 1em;
+  grid-template-areas:
+          "head"
+          "main"
+          "foot";
+  min-height:100vh;
+}
+
+#void, #void2 {
+  display: none;
+}
+
+#main {
+  background-color: $secondary-light;
+  padding: 0.2rem 0.2rem 0 0.2rem;
+}
+
+body {
+  font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  overflow-x: hidden;
+}
+body::-webkit-scrollbar {
+  display: none;
+}
+
+
+#header {
+  padding:0;
+  width: unset;
+  grid-template-columns: 100vw;
+  grid-template-rows: unset;
+  grid-template-areas: "animator" "navigation";
+
+  & #navigation {
+    grid-template-columns: 1fr;
+    grid-template-rows: 0 repeat(2, auto);
+    grid-template-areas: "animator" "odd" "even";
+    transition: 0.2s;
+
+    &:hover {
+      & * {
+        opacity: 1;
+        display: block;
+      }
+    }
+  }
+}
+
+#main {
+  display:unset;
+}
+
+#full-animation {
+  width: 10em;
+  height: 10em;
+  transform: translateX(-5em);
+  position: relative;
+  top: -4em;
+  left: 50%;
+}
+
+#odd, #even {
+  display: none;
+  border-bottom: 1px solid $primary-color;
+  border-left: unset;
+  border-right: unset;
+  border-image:
+          linear-gradient(to right, rgba(0, 0, 0, 0), $primary-color, rgba(0, 0, 0, 0)) 1;
+  align-items: center;
+  text-align: center;
+  padding-left: unset;
+  & div.pages { padding-left: unset; }
+  padding-right: unset;
+  & div.pages { padding-right: unset; }
+
+  &:hover {
+    & * {
+      display: flex;
+    }
+  }
+}
+
+#navigation-toggle {
+  display: none;
+
+  & + #navigation * {
+    display:none;
+  }
+
+  &:checked + #navigation * {
+    opacity:1;
+    display: block;
+  }
+  &:hover + #navigation * {
+    opacity:1;
+    display: block;
+  }
+}
+
+#animator {
+  display: grid;
+
+  & label {
+    pointer-events:unset;
+    margin-bottom: 0;
+    height: 5em;
+    width: 100%;
+    top: unset;
+  }
+}
+
+#introduction {
+  display: none;
+}
+
+#void {
+  display:none;
+}
+
+#void2 {
+  display:none;
+}
+
+.row {
+  flex-direction: row;
+  margin-left: -1.0rem;
+  width: calc(100% + 2.0rem);
+}
+
+.row .column {
+  margin-bottom: inherit;
+  padding: 0 1.0rem;
+}

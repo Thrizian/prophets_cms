@@ -29,7 +29,7 @@ html {
 body {
   display: grid;
   grid-template-columns: 1fr minmax(414px, 38.2%) 1fr 0;
-  grid-template-rows: 1fr 2em;
+  grid-template-rows: 1fr 1em;
   grid-template-areas:
           'void head void2 main'
           'void foot void2 main';
@@ -116,30 +116,75 @@ ul {
   list-style: circle inside;
 }
 
-table {
-  display: grid;
-  grid-template-columns: minmax(150px, 1.33fr) minmax(150px, 2.33fr);
-  border-collapse: collapse;
-  min-width: 100%;
+crud-table {
+  headers {
+    display: grid;
+    p {
+      margin-bottom: 0;
+      text-align: left;
+      font-weight: normal;
+      padding: 15px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      background: $primary-background;
+      color: $secondary-tint;
+      border-bottom: 1px solid $secondary-tint;
+      border-right: 1px solid $secondary-tint;
+    }
+  }
+
+  data-segment {
+    &:nth-child(odd) {
+      background-color: $secondary-tint;
+    }
+    & p {
+      margin-bottom: 0;
+      text-align: left;
+      font-weight: normal;
+      padding: 15px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      border-bottom: 1px solid $primary-light;
+      border-right: 1px solid $primary-light;
+    }
+  }
+
+  & data data-segment, & headers {
+    display: grid;
+  }
+
+  & .table-admin-users, data .table-admin-users {
+    grid-template-columns: 1fr 1fr 2fr 1fr 2fr;
+  }
+
+  & .table-subjects, data .table-subjects {
+    grid-template-columns: 0.5fr 2fr 0.7fr 0.7fr 1.5fr;
+  }
+
+  & .table-pages, data .table-pages {
+    grid-template-columns: 0.5fr 1fr 1fr 0.5fr 0.5fr 0.5fr 2fr;
+  }
+
+  & .table-sections, data .table-sections {
+    grid-template-columns: 0.5fr 1fr 0.5fr 0.5fr 2fr;
+  }
 }
 
 #table-admin-user {
-  grid-template-columns:
-          minmax(150px, 0.8fr)
-          minmax(150px, 0.8fr)
-          minmax(150px, 2fr)
-          minmax(150px, 1fr)
-          minmax(150px, 2fr)
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-auto-flow: row;
 }
 
 #table-subjects {
-  grid-template-columns:
-          minmax(40px, 0.2fr)
-          minmax(150px, 0.8fr)
-          minmax(150px, 2fr)
-          minmax(150px, 1fr)
-          minmax(150px, 3fr)
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-auto-flow: row;
 }
+
+
 
 #table-pages {
   grid-template-columns:
@@ -517,6 +562,8 @@ span.status {
   color: $success-green;
 }
 
+
+
 .pages {
   ul { margin:0; }
   ul li{ margin: 0; }
@@ -588,15 +635,11 @@ span.status {
     margin-bottom: 1.0rem;
   }
 
-  thead,
-  tbody,
-  tr {
-    display: contents;
+  table {
+    border-collapse: collapse;
   }
 
   th {
-    position: sticky;
-    top: 0;
     text-align: left;
     font-weight: normal;
     font-size: 1.6rem;
@@ -607,7 +650,6 @@ span.status {
     background: $primary-background;
     color: $secondary-tint;
     border-bottom: 1px solid $secondary-tint;
-    border-top: 1px solid $secondary-tint;
     border-right: 1px solid $secondary-tint;
   }
 
@@ -770,132 +812,7 @@ span.status {
 
 /* Smartphones (portrait) ----------- */
 @media only screen and (max-width : 320px) {
-  body {
-    grid-template-columns: 100vw;
-    grid-template-rows: fit-content(10%) auto 2em;
-    grid-template-areas:
-            "head"
-            "main"
-            "foot";
-  }
-
-  body
-
-  #main {
-    padding: 0.2rem 0.2rem 0 0.2rem;
-  }
-
-  body {
-    font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-    overflow-x: hidden;
-  }
-  body::-webkit-scrollbar {
-    display: none;
-  }
-
-
-  #header {
-    padding:0;
-    width: unset;
-    grid-template-columns: 100vw;
-    grid-template-rows: unset;
-    grid-template-areas: "animator" "navigation";
-
-    & #navigation {
-      grid-template-columns: 1fr;
-      grid-template-rows: 0 repeat(2, auto);
-      grid-template-areas: "animator" "odd" "even";
-      transition: 0.2s;
-      display: grid;
-
-      &:hover {
-        & * {
-          opacity: 1;
-          display: block;
-        }
-      }
-    }
-  }
-
-  #main {
-    display:unset;
-  }
-
-  #full-animation {
-    width: 10em;
-    height: 10em;
-    transform: translateX(-5em);
-    position: relative;
-    top: -4em;
-    left: 50%;
-  }
-
-  #odd, #even {
-    display: none;
-    border-bottom: 1px solid $primary-color;
-    border-left: unset;
-    border-right: unset;
-    border-image:
-            linear-gradient(to right, rgba(0, 0, 0, 0), $primary-color, rgba(0, 0, 0, 0)) 1;
-    align-items: center;
-    text-align: center;
-    padding-left: unset;
-    & div.pages { padding-left: unset; }
-    padding-right: unset;
-    & div.pages { padding-right: unset; }
-
-    &:hover {
-      & * {
-        display: flex;
-      }
-    }
-  }
-
-  #navigation-toggle {
-    display: none;
-
-    &:checked + #navigation * {
-      display: block;
-    }
-    &:hover + #navigation * {
-      display: block;
-    }
-  }
-
-  #animator {
-    display: grid;
-
-    & label {
-      pointer-events:unset;
-      margin-bottom: 0;
-      height: 5em;
-      width: 100%;
-      top: unset;
-    }
-  }
-
-  #introduction {
-    display: none;
-  }
-
-  #void {
-    display:none;
-  }
-
-  #void2 {
-    display:none;
-  }
-
-  .row {
-    flex-direction: row;
-    margin-left: -1.0rem;
-    width: calc(100% + 2.0rem);
-  }
-
-  .row .column {
-    margin-bottom: inherit;
-    padding: 0 1.0rem;
-  }
+  @import 'mixins/portrait_max_width_320';
 }
 
 /* iPads (portrait and landscape) ----------- */
@@ -910,7 +827,7 @@ span.status {
 
 /* iPads (portrait) ----------- */
 @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
-  /* Styles */
+  @import 'mixins/ipad_portrait';
 }
 /**********
 iPad 3

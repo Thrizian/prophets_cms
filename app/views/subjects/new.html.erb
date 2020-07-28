@@ -3,13 +3,13 @@
 <div class="subjects new">
   <h2>Create a new Subject</h2>
 
-  <%= link_to('<< Back to index', subjects_path, class: 'back-link') %>
+  <%= render partial: 'back_to_index' %>
 
   <%= form_for(@subject) do |f| %>
     <%= render(partial: 'form', locals: {f: f}) %>
 
     <div class="form-buttons">
-      <%= f.submit('Create Subject') %>
+      <%= f.submit('Create Subject', remote:true) %>
     </div>
   <% end %>
 </div>

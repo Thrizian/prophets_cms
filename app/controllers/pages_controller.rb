@@ -47,7 +47,7 @@ class PagesController < ApplicationController
   def destroy
     @page.destroy
 
-    flash[:notice] = "Page '#{@page.name}'successfully destroyed."
+    flash[:notice] = "Page '#{@page.name}' successfully destroyed."
     redirect_to pages_path(subject_id: @subject.id)
   end
 

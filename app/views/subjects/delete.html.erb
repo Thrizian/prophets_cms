@@ -1,5 +1,5 @@
 <%= render 'shared/title' %>
-<%= link_to('<< Back to index', subjects_path, class: 'back-link') %>
+<%= render partial: 'back_to_index', locals: {format: 'html'}%>
 
 <div class="subjects delete">
   <h2>Delete Subject <%= @subject.name %></h2>

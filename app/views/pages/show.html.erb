@@ -2,7 +2,8 @@
 
 <div class="pages show">
   <h2>Showing Page <%= @page.name %></h2>
-  <%= link_to('<< Back to index', pages_path(subject_id: @subject.id), class: 'back-link') %>
+
+  <%= render partial: 'back_to_index', locals: {subject: @subject} %>
 
   <table summary="Page detail view">
     <tr>

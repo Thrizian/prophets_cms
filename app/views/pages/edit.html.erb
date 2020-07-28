@@ -2,7 +2,8 @@
 
 <div class="pages edit">
   <h2>Update Page <%= @page.name %></h2>
-  <%= link_to('<< Back to index', pages_path(subject_id: @subject.id), class: 'back-link') %>
+
+  <%= render partial: 'back_to_index', locals: {subject: @subject} %>
 
   <%= form_for(@page, url: page_path(@page, subject_id: @subject.id)) do |f| %>
     <%= render(partial: 'form', locals: { f: f }) %>

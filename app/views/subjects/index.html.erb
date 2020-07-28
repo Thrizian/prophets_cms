@@ -5,11 +5,11 @@
   <%= link_to('<< To Admin Menu', access_menu_path, class: 'admin-menu')%>
   <crud-table id="table-subjects">
     <headers class="table-subjects">
-        <p>#</p>
-        <p>Subject</p>
-        <p>Visible</p>
-        <p>Pages</p>
-        <p>Actions</p>
+      <p>#</p>
+      <p>Subject</p>
+      <p>Visible</p>
+      <p>Pages</p>
+      <p>Actions</p>
     </headers>
     <data>
       <% @subjects.each do |s| %>

@@ -2,7 +2,7 @@
 
 <div class="admin_users edit">
   <h2>Update Admin <%= @admin_user.full_name %></h2>
-  <%= link_to('<< Back to index', admin_users_path, class: 'back-link') %>
+  <%= link_to('<< Back to Admin Users', admin_users_path, class: 'back-link') %>
 
   <%= form_for(@admin_user) do |f| %>
     <%= render(partial: 'form', locals: { f: f }) %>

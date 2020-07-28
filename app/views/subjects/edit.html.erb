@@ -1,7 +1,9 @@
 <%= render 'shared/title' %>
 <div class="subjects edit">
   <h2>Update Subject <%= @subject.name %></h2>
-  <%= link_to('<< Back to index', subjects_path, class: 'back-link') %>
+
+  <%= render partial: 'back_to_index' %>
+
   <%= form_for(@subject) do |f| %>
     <%= render(partial: 'form', locals: {f: f}) %>
 

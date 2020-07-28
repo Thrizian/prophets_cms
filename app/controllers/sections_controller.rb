@@ -16,7 +16,8 @@ class SectionsController < ApplicationController
   def show; end
 
   def new
-    @section = Section.new(page_id: @page.id)
+    @page = Page.find_by_id(@page.id)
+    @section = @page.sections.build(page_id: @page.id)
   end
 
   def create
@@ -47,7 +48,7 @@ class SectionsController < ApplicationController
   def destroy
     @section.destroy
 
-    flash[:notice] = "Section '#{@section.name}'successfully destroyed."
+    flash[:notice] = "Section '#{@section.name}' successfully destroyed."
     redirect_to sections_path(page_id: @page.id)
   end
 

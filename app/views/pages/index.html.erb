@@ -4,37 +4,34 @@
   <h2>Pages</h2>
   <%= link_to('<< To Admin Menu', access_menu_path, class: 'admin-menu')%>
   <br/>
-  <%= link_to('<< To Subjects', subjects_path, class: 'action index')%>
-  <table id="table-pages">
-    <thead>
-      <tr>
-        <th>#</th>
-        <th>Name</th>
-        <th>Permalink</th>
-        <th>Subject ID</th>
-        <th>Sections</th>
-        <th>Visible</th>
-        <th>Actions</th>
-      </tr>
-    </thead>
-    <tbody>
+  <%= link_to('<< To Subjects', subjects_path, remote: true, class: 'action index')%>
+  <crud-table id="table-pages">
+    <headers class="table-pages">
+        <p>#</p>
+        <p>Name</p>
+        <p>Permalink</p>
+        <p>Subject ID</p>
+        <p>Sections</p>
+        <p>Visible</p>
+        <p>Actions</p>
+    </headers>
+    <data>
       <% @pages.each do |p| %>
-        <tr>
-          <td><%= p.position %></td>
-          <td><%= p.name%></td>
-          <td><%= p.permalink %></td>
-          <td><%= p.subject_id %></td>
-          <td class='center'><%= p.sections.size %></td>
-          <td class='center'><%= status_tag(p.visible) %></td>
-          <td class='actions'>
-            <%= link_to('View Sections', sections_path(page_id: p.id), class: 'action index') %> |
+        <data-segment class="table-pages">
+          <p><%= p.position %></p>
+          <p><%= p.name%></p>
+          <p><%= p.permalink %></p>
+          <p><%= p.subject_id %></p>
+          <p class='center'><%= link_to(p.sections.size, sections_path(page_id: p.id), class: 'action index') %></p>
+          <p class='center'><%= status_tag(p.visible) %></p>
+          <p class='actions'>
             <%= link_to('Show', page_path(p, subject_id: @subject.id), class: 'action show') %> |
             <%= link_to('Edit', edit_page_path(p, subject_id: @subject.id), class: 'action edit') %> |
             <%= link_to('Delete', delete_page_path(p, subject_id: @subject.id), class: 'action delete') %>
-          </td>
-        </tr>
+          </p>
+        </data-segment>
       <% end %>
-    </tbody>
-  </table>
+    </data>
+  </crud-table>
   <%= link_to('Add new page', new_page_path(subject_id: @subject.id), class: 'action new')%>
 </div>
