@@ -1,3 +1,5 @@
+[![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/Thrizian/prophets_cms)
+
 # Prophets CMS
 The CMS has a public and private admin area with some simple login functionality.
 In the Admin Area you can create Subjects/Pages/Sections.
